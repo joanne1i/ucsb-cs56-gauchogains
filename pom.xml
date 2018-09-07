@@ -8,8 +8,8 @@
 
     <!-- project coordinates - values which uniquely identify this project -->
 
-  <groupId>edu.ucsb.cs56.pconrad</groupId>
-  <artifactId>spark-mustache-demo-02</artifactId>
+  <groupId>edu.ucsb.cs56.gauchogains</groupId>
+  <artifactId>GauchoGainsMain</artifactId>
   <version>1.0</version>
   <url>https://ucsb-cs56-pconrad.github.io/sparkjava-mustache-example</url>
   
@@ -23,7 +23,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <userDefinedMainClass>edu.ucsb.cs56.pconrad.SparkMustacheDemo02</userDefinedMainClass>
+    <userDefinedMainClass>edu.ucsb.cs56.gauchogains.GauchoGainsMain</userDefinedMainClass>
     <userDefinedHerokuApp>TBD</userDefinedHerokuApp>
   </properties>
 
@@ -153,11 +153,11 @@
           <jdkVersion>1.8</jdkVersion>
           <!-- Use your own application name -->
 	  <!-- at Heroku CLI, use heroku apps to list, or use Heroku Dashboard -->
-          <appName>${userDefinedHerokuApp}</appName>
+          <appName>cs56-m18-joanne1i-gauchogains</appName>
           <processTypes>
             <!-- Tell Heroku how to launch your application -->
             <!-- You might have to remove the ./ in front   -->
-            <web>java $JAVA_OPTS -jar target/${project.name}-${project.version}-jar-with-dependencies.jar</web>
+            <web>java $JAVA_OPTS -jar target/GauchoGainsMain-1.0-jar-with-dependencies.jar</web>
 
           </processTypes>
 	</configuration>
