@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+{{> head }}
+<body>
+ {{> nav }}
+ <h1>Login</h1>
+
+<form action="/" method="post">
+  Email Login<br>
+  <input type="text" placeholder="Enter email" name="userlogin" required>
+  <br>
+  Password<br>
+  <input type="password" placeholder="Enter password" name="psw" required>
+  <br><br>
+  <input type="submit" value="Login">
+</form> 
+
+<p>If you click the "Login" button, the form-data will be sent to a page called "/add/student".</p>
+
+
+ {{> bootstrap-from-cdn-body }}
+</body>
+</html>
