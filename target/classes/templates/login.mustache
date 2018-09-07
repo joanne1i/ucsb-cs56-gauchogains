@@ -3,8 +3,8 @@
 {{> head }}
 <body>
  {{> nav }}
- <h1>Login</h1>
-
+ <h1><center>Login</center></h1>
+ <center>
 <form action="/" method="post">
   Email Login<br>
   <input type="text" placeholder="Enter email" name="userlogin" required>
@@ -12,11 +12,9 @@
   Password<br>
   <input type="password" placeholder="Enter password" name="psw" required>
   <br><br>
-  <input type="submit" value="Login">
+  <input href="/home" type="submit" value="Login">
 </form> 
-
-<p>If you click the "Login" button, the form-data will be sent to a page called "/add/student".</p>
-
+ </center>
 
  {{> bootstrap-from-cdn-body }}
 </body>

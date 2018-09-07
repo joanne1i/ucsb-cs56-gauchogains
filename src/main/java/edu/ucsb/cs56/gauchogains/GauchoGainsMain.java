@@ -35,9 +35,9 @@ public class GauchoGainsMain{
         // hello.mustache file is in resources/templates directory
        // get("/", (rq, rs) -> new ModelAndView(map, "hello.mustache"), new MustacheTemplateEngine());
 
-		get("/", (rq, rs) -> new ModelAndView(map, "login.mustache"), new MustacheTemplateEngine());
+		post("/", (rq, rs) -> new ModelAndView(map, "login.mustache"), new MustacheTemplateEngine());
 
-		post("/add/student", (rq, rs) -> new ModelAndView(map, "addedStudent.mustache"), new MustacheTemplateEngine());
+		post("/home", (rq, rs) -> new ModelAndView(map, "home.mustache"), new MustacheTemplateEngine());
 		
 	}
 	
