@@ -41,7 +41,7 @@ public class GauchoGainsMain{
     b = rq.queryParams("psw");
     System.out.println(a);
     System.out.println(b);
-    if (users.get(a).equals(b))
+    if (users.get(a) != null && users.get(a).equals(b))
 		return  new ModelAndView(users, "test.mustache");
     else
     return new ModelAndView(users, "logon.mustache");	}, new MustacheTemplateEngine());
