@@ -29,16 +29,34 @@ public class GauchoGainsMain{
 
         port(getHerokuAssignedPort());
 		
-		Map map = new HashMap();
-        map.put("name", "Sam");
-		
-        // hello.mustache file is in resources/templates directory
-       // get("/", (rq, rs) -> new ModelAndView(map, "hello.mustache"), new MustacheTemplateEngine());
-
-		get("/", (rq, rs) -> new ModelAndView(map, "login.mustache"), new MustacheTemplateEngine());
-
-		post("/home", (rq, rs) -> new ModelAndView(map, "home.mustache"), new MustacheTemplateEngine());
-		
+	Map map = new HashMap();
+        //map.put("userlogin","");
+	//map.put("psw","");
+	HashMap<String, String> users = new HashMap<>();
+	//users.put("John Smith","ben123");
+	//users.put("Muscle Bro","ben1234");
+	//users.put("Nice Guy","ben123");
+        get("/", (rq, rs) -> new ModelAndView(map, "login.mustache"), new MustacheTemplateEngine());
+	post("/home", (rq, rs) -> {
+    String a, b;
+    a = rq.queryParams("userlogin");
+    b = rq.queryParams("psw");
+    System.out.println(a);
+    System.out.println(b);
+    if (a == "JohnSmith" && b == "admin")
+		post("/home", (rq1, rs1) -> new ModelAndView(map, "test.mustache"), new MustacheTemplateEngine());
+    else
+    post("/home", (rq2, rs2) -> new ModelAndView(map, "logon.mustache"), new MustacheTemplateEngine());
+    return String.join(" |String| ",a,b);
+	});
+	//}
+	//else {
+	//post("/home", (rq, rs) -> new ModelAndView(map, "logon.mustache"), new MustacheTemplateEngine());
+	//}
+	//post("/home", (rq, rs) -> new ModelAndView(users, "logon.mustache"), new MustacheTemplateEngine());
+	//post("/home", (rq, rs) -> new ModelAndView(users, "home.mustache"), new MustacheTemplateEngine());
+	//login.mustache action="/home"
+	//There is no re-route to /logon	
 	}
 	
     static int getHerokuAssignedPort() {
