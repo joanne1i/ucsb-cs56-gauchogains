@@ -28,25 +28,23 @@ public class GauchoGainsMain{
 	public static void main(String[] args) {
 
         port(getHerokuAssignedPort());
-		
-	Map map = new HashMap();
-        //map.put("userlogin","");
-	//map.put("psw","");
+	
 	HashMap<String, String> users = new HashMap<>();
-	//users.put("John Smith","ben123");
-	//users.put("Muscle Bro","ben1234");
-	//users.put("Nice Guy","ben123");
-        get("/", (rq, rs) -> new ModelAndView(map, "login.mustache"), new MustacheTemplateEngine());
-	get("/home", (rq, rs) -> {
+	users.put("John Smith","admin");
+	users.put("Joanne Li", "admin");
+	users.put("Chandler Forrestor", "admin");
+	users.put("Maga Kim", "admin");
+        get("/", (rq, rs) -> new ModelAndView(users, "login.mustache"), new MustacheTemplateEngine());
+	post("/home", (rq, rs) -> {
     String a, b;
     a = rq.queryParams("userlogin");
     b = rq.queryParams("psw");
     System.out.println(a);
     System.out.println(b);
-    if (a.equals("JohnSmith") && b.equals("admin"))
-		return  new ModelAndView(map, "test.mustache");
+    if (users.get(a).equals(b))
+		return  new ModelAndView(users, "test.mustache");
     else
-    return new ModelAndView(map, "logon.mustache");	}, new MustacheTemplateEngine());
+    return new ModelAndView(users, "logon.mustache");	}, new MustacheTemplateEngine());
 	}
 	
     static int getHerokuAssignedPort() {
