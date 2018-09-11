@@ -4,14 +4,14 @@
 <body>
  {{> nav }}
  <h1><center>Login</center></h1>
- <p><center>Login info:<br>John Smith<br>pass: admin<br></center></p>
+ <p><center>Login info:<br>JohnSmith<br>pass: admin<br></center></p>
  <center>
-<form action="/home" method="post">
+<form action="/home" method="get">
   Email Login<br>
-  <input type="text" placeholder="Enter email" name="userlogin"  required>
+  <input type="text" name="userlogin" placeholder="Enter email"  required>
   <br>
   Password<br>
-  <input type="password" placeholder="Enter password" name="psw" required>
+  <input type="password" name="psw" placeholder="Enter password"  required>
   <br><br>
   <input type="submit" value = "Login">
 </form> 
